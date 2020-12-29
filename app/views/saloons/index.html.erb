@@ -1,0 +1,13 @@
+<h1>Salon</h1>
+
+<ul>
+  <% @saloons.each do |saloon| %>
+    <li>
+      
+      <%= link_to saloon.name, saloon %>
+
+    </li>
+  <% end %>
+</ul>
+<%= link_to "Add Salon", new_saloon_path %>
+

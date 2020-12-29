@@ -1,0 +1,15 @@
+<h1><%= @saloon.name %></h1>
+
+<p>   <%= @saloon.name %>
+      <%= @saloon.address %>
+      <%= @saloon.opening %>
+      <%= @saloon.closing %>
+      
+</p>
+<ul>
+  <li><%= link_to "Edit Salon Details", edit_saloon_path(@saloon) %></li>
+  <li><%= link_to "Destroy", saloon_path(@saloon),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %></li>
+   <li><%=link_to 'Add services',new_service_path %></li>
+</ul>

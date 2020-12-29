@@ -1,0 +1,32 @@
+<h1>Add a new Salon</h1>
+
+<%= form_with model: @saloon do |form| %>
+  <div>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+    <%= @saloon.errors.full_messages_for(:name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  <div>
+    <%= form.label :address %><br>
+    <%= form.text_field :address %><br>
+  </div>
+   <div>
+    <%= form.label :opening %><br>
+    <%= form.text_field :opening %><br>
+  </div>
+   <div>
+    <%= form.label :closing %><br>
+    <%= form.text_field :closing %><br>
+  </div>
+ <div>
+    <%= form.label :user_id %><br>
+    <%= form.text_field :user_id ,value:current_user.id,:readonly => true%><br>
+  </div>
+  
+  <div>
+    <%= form.submit %>
+  </div>
+  
+<% end %>

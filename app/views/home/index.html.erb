@@ -1,0 +1,15 @@
+<%if user_signed_in? %>
+    <%=link_to 'sign out',destroy_user_session_path,method: :delete,class: "nav-link"%>
+    <%=link_to 'edit profile',edit_user_registration_path,class: "nav-link"%>
+  <% usertype=current_user.user_type %>
+      <% if usertype=='Owner'%>
+        <%=link_to 'services',services_path%>
+        <%=link_to 'Add salons',new_saloon_path %>
+        <%=link_to 'Show salons',saloons_index_path %>
+
+
+      <%end%>
+  <%else%>
+    <%=link_to 'Sign up',new_user_registration_path,class: "nav-link"%>
+    <%=link_to 'Sign in',new_user_session_path,class: "nav-link"%>
+  <%end%>
